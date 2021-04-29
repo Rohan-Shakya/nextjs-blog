@@ -3,6 +3,7 @@ import Header from "../components/header";
 import HeroPost from "../components/hero-post";
 import MoreStories from "../components/more-stories";
 import { getAllPosts } from "../lib/utils";
+import { GetStaticProps } from "next";
 
 export default function Home({ blogs }) {
   const heroPost = blogs[0].fields;
@@ -26,7 +27,7 @@ export default function Home({ blogs }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const items = await getAllPosts();
 
   return {
