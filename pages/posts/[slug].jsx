@@ -6,7 +6,6 @@ import { getAllPosts, getPost, otherPosts } from "../../lib/utils";
 import PostHeader from "../../components/post-header";
 import PostBody from "../../components/post-body";
 import MoreStories from "../../components/more-stories";
-import { GetStaticPaths, GetStaticProps } from "next";
 
 const Page = ({ post, morePosts }) => {
   const router = useRouter();
@@ -46,7 +45,7 @@ const Page = ({ post, morePosts }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params }) => {
   const post = await getPost(params.slug);
   const morePosts = await otherPosts(params.slug);
 
@@ -59,7 +58,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   };
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async () => {
   const allPosts = await getAllPosts();
 
   const slugs = allPosts.map((item) => {
