@@ -14,3 +14,18 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* Extra large devices (large desktops, 1200px and up) */
+/* @media (max-width: 1200px) {
+  h1 {
+    font-size: 2rem !important;
+  }
+} */
+
+.heading-1-responsive {
+  font-size: calc(100% + 1.5vw + 1.2vh) !important;
+}
+
+.font-weight-medium {
+  font-weight: 500 !important;
+}
